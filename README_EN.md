@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Saytanz0815/acm-brand/main/logo-dark.png">
-    <img src="https://raw.githubusercontent.com/Saytanz0815/acm-brand/main/logo.png" width="120" alt="Annotation Color Memory">
+    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/Saytanz0815/acm-brand@main/logo-dark.png">
+    <img src="https://cdn.jsdelivr.net/gh/Saytanz0815/acm-brand@main/logo.png" width="120" alt="Annotation Color Memory">
   </picture>
 </p>
 

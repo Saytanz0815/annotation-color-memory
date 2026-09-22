@@ -21,11 +21,10 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Saytanz0815/annotation-color-memory/releases/latest"><img src="https://img.shields.io/github/v/release/Saytanz0815/annotation-color-memory?style=flat-square&label=release" alt="release"></a>
+  <a href="https://github.com/Saytanz0815/annotation-color-memory/releases/latest"><img src="https://img.shields.io/badge/release-v1.0.4-2ea44f?style=flat-square" alt="release v1.0.4"></a>
   <img src="https://img.shields.io/badge/Zotero-7%2B-CC2936?style=flat-square&logo=zotero&logoColor=white" alt="Zotero 7+">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="license"></a>
-  <a href="https://github.com/Saytanz0815/annotation-color-memory/stargazers"><img src="https://img.shields.io/github/stars/Saytanz0815/annotation-color-memory?style=flat-square&label=stars" alt="stars"></a>
-  <a href="https://github.com/Saytanz0815/annotation-color-memory/releases"><img src="https://img.shields.io/github/downloads/Saytanz0815/annotation-color-memory/total?style=flat-square&label=downloads" alt="downloads"></a>
+  <img src="https://img.shields.io/badge/privacy-local%20only-2ea44f?style=flat-square" alt="privacy local only">
 </p>
 
 <p align="center">

@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="logo.png" width="120" alt="Annotation Color Memory">
+</p>
+
 # Annotation Color Memory
 
 <p align="center">

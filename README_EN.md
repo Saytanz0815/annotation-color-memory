@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.png" width="120" alt="Annotation Color Memory">
+  <img src="https://raw.githubusercontent.com/Saytanz0815/acm-brand/main/logo.png" width="120" alt="Annotation Color Memory">
 </p>
 
 # Annotation Color Memory

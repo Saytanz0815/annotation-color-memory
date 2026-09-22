@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Annotation Color Memory",
   "version": "1.0.4",
-  "description": "Remember last-used Zotero PDF annotation colors (highlight, underline, note, image) across restarts. Never locks native color pickers.",
+  "description": "记住 Zotero PDF 标注颜色（高亮 / 下划线 / 笔记 / 图片），重启后自动恢复上次使用的颜色，不锁死原生取色器。",
   "author": "Annotation Color Memory contributors",
   "homepage_url": "https://github.com/Saytanz0815/annotation-color-memory",
   "applications": {

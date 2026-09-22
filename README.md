@@ -1,80 +1,84 @@
 # Annotation Color Memory
 
-Remember the last-used Zotero PDF annotation color for each tool (highlight, underline, note, image) across restarts.
+<p align="center">
+  <b>中文</b> · <a href="README_EN.md">English</a>
+</p>
 
-Zotero does not persist annotation tool colors across tabs or restarts (team: “fixing that is planned”). This plugin restores them without locking the native color pickers.
+记住每个 Zotero PDF 标注工具（高亮、下划线、笔记、图片）上次使用的颜色，重启后依然保留。
 
-## Features
+Zotero 本身不会持久化标注工具的颜色，切换标签页或重启后就会丢失，团队表示“计划修复”。本插件在不锁定原生取色器的前提下，把这些颜色恢复回来。
 
-- Per-tool memory (highlight / underline / note / image can be different colors)
-- Restores last color when a PDF reader opens
-- Updates immediately when you pick a color (toolbar or selection popup)
-- Never blocks or rewrites the native color UI
-- No network access; stores only Zotero preferences
+## 功能特性
 
-## Requirements
+- 按工具分别记忆（高亮、下划线、笔记、图片可以用不同颜色）
+- 打开 PDF 阅读器时恢复上次使用的颜色
+- 改色即时生效（工具栏和选中文字后的弹窗都算）
+- 不阻断、不改写原生颜色界面
+- 无网络访问，只把数据存在 Zotero 偏好里
 
-- Zotero 7 or newer (tested up to Zotero 10.x plugin API range)
+## 环境要求
 
-## Install (end user)
+- Zotero 7 或更高版本（已测试到 Zotero 10.x 的插件 API 范围）
 
-1. Download `annotation-color-memory-1.0.4.xpi` (Releases or the `dist/` folder).
-2. In Zotero: **Tools → Plugins** (or Tools → Add-ons).
-3. Drag the `.xpi` onto the Plugins window.
-4. Restart Zotero.
-5. Pick an annotation color once, then restart Zotero — the color should persist.
+## 安装
 
-Uninstall: Plugins window → remove the plugin → restart.
+1. 下载 `annotation-color-memory-1.0.4.xpi`（在 Releases 或 `dist/` 目录里）。
+2. 在 Zotero 中打开 **工具 → 插件**（或 工具 → 附加组件）。
+3. 把 `.xpi` 文件拖到插件窗口上。
+4. 重启 Zotero。
+5. 先手动改一次标注颜色，再重启 Zotero，颜色应当被保留。
 
-## Preferences
+卸载：在插件窗口中移除该插件，然后重启 Zotero。
 
-Open Config Editor (Settings → Advanced → Config Editor) if needed:
+## 偏好设置
 
-| Key | Meaning |
+需要时打开配置编辑器（设置 → 高级 → 配置编辑器）：
+
+| 键 | 含义 |
 |-----|---------|
-| `extensions.zotero.annotColorMem.enabled` | Master switch (default `true`) |
-| `extensions.zotero.annotColorMem.saveLast` | Follow last-used colors (default `true`) |
-| `extensions.zotero.annotColorMem.highlight` | Last highlight color |
-| `extensions.zotero.annotColorMem.underline` | Last underline color |
-| `extensions.zotero.annotColorMem.note` | Last note-annotation color |
-| `extensions.zotero.annotColorMem.image` | Last image-annotation color |
+| `extensions.zotero.annotColorMem.enabled` | 总开关（默认 `true`） |
+| `extensions.zotero.annotColorMem.saveLast` | 是否跟随上次使用的颜色（默认 `true`） |
+| `extensions.zotero.annotColorMem.highlight` | 上次使用的高亮颜色 |
+| `extensions.zotero.annotColorMem.underline` | 上次使用的下划线颜色 |
+| `extensions.zotero.annotColorMem.note` | 上次使用的笔记标注颜色 |
+| `extensions.zotero.annotColorMem.image` | 上次使用的图片标注颜色 |
 
-To freeze colors instead of following the last pick: set `saveLast` to `false` and set each color key yourself.
+想冻结颜色，不再跟随上次选择：把 `saveLast` 设为 `false`，然后自己设置各个颜色键。
 
-Do **not** pin color keys in `user.js` — that overwrites saved colors on every start.
+不要把颜色键写进 `user.js`，那样会在每次启动时覆盖已保存的颜色。
 
-## Development
+## 开发
 
-Layout:
+目录结构：
 
 ```
 src/
-  manifest.json    # Zotero extension manifest
-  bootstrap.js     # startup / shutdown
-  code.js          # logic
+  manifest.json    # Zotero 扩展清单
+  bootstrap.js     # 启动 / 关闭
+  code.js          # 逻辑
 ```
 
-Build the `.xpi` (a zip of `src/`):
+打包 `.xpi`（把 `src/` 打成 zip）：
 
 ```bash
 cd src
 zip -r ../annotation-color-memory-1.0.4.xpi manifest.json bootstrap.js code.js
 ```
 
-Or on Windows (PowerShell):
+在 Windows（PowerShell）上：
 
 ```powershell
 Compress-Archive -Path src/* -DestinationPath dist/annotation-color-memory-1.0.4.xpi
 ```
 
-Load temporarily while developing: Tools → Plugins → gear → “Install Plugin From File”.
+开发时临时加载：工具 → 插件 → 齿轮 → “从文件安装插件”。
 
-## Privacy
+## 隐私
 
-- No telemetry, no remote requests, no file writes outside Zotero preferences.
-- Does not read or upload library/PDF content.
-- Preference keys use the `extensions.zotero.annotColorMem.*` namespace only.
+- 无遥测、无远程请求，不写 Zotero 偏好以外的文件。
+- 不读取、不上传文献库和 PDF 内容。
+- 偏好键只使用 `extensions.zotero.annotColorMem.*` 命名空间。
 
-## License
+## 许可证
 
-MIT — see [LICENSE](LICENSE).
+MIT，见 [LICENSE](LICENSE)。

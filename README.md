@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Saytanz0815/acm-brand/main/logo.png" width="120" alt="Annotation Color Memory">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Saytanz0815/acm-brand/main/logo-dark.png">
+    <img src="https://raw.githubusercontent.com/Saytanz0815/acm-brand/main/logo.png" width="120" alt="Annotation Color Memory">
+  </picture>
 </p>
 
 # Annotation Color Memory
@@ -10,21 +13,32 @@
 </p>
 
 <p align="center">
+  <sub>读文献改完标注颜色，重开 Zotero 又丢了？这个插件替你记住。</sub>
+</p>
+
+<p align="center">
   <a href="README_EN.md">English</a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/Saytanz0815/annotation-color-memory/releases"><img src="https://img.shields.io/github/v/release/Saytanz0815/annotation-color-memory?style=flat-square&label=release" alt="release"></a>
+  <a href="https://github.com/Saytanz0815/annotation-color-memory/releases/latest"><img src="https://img.shields.io/github/v/release/Saytanz0815/annotation-color-memory?style=flat-square&label=release" alt="release"></a>
   <img src="https://img.shields.io/badge/Zotero-7%2B-CC2936?style=flat-square&logo=zotero&logoColor=white" alt="Zotero 7+">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="license"></a>
   <a href="https://github.com/Saytanz0815/annotation-color-memory/stargazers"><img src="https://img.shields.io/github/stars/Saytanz0815/annotation-color-memory?style=flat-square&label=stars" alt="stars"></a>
+  <a href="https://github.com/Saytanz0815/annotation-color-memory/releases"><img src="https://img.shields.io/github/downloads/Saytanz0815/annotation-color-memory/total?style=flat-square&label=downloads" alt="downloads"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Saytanz0815/annotation-color-memory/releases/latest"><b>下载 xpi</b></a>
+  ·
+  <a href="#安装">安装说明</a>
 </p>
 
 ---
 
 ## Why
 
-Zotero 本身不会持久化标注工具的颜色：切换标签页或重启后就会丢失，团队表示「计划修复」。
+Zotero 本身不会持久化标注工具的颜色：切换标签页或重启后就会丢失（上游长期未处理该行为）。
 
 本插件在**不锁定原生取色器**的前提下，把上次使用的颜色恢复回来。无网络、无遥测，只写 Zotero 偏好。
 
@@ -42,12 +56,18 @@ Zotero 本身不会持久化标注工具的颜色：切换标签页或重启后�
 
 ## 安装
 
-1. 下载 [`annotation-color-memory-1.0.4.xpi`](https://github.com/Saytanz0815/annotation-color-memory/releases/latest)（Releases 或 `dist/`）
+1. **[下载 xpi](https://github.com/Saytanz0815/annotation-color-memory/releases/latest)**（`annotation-color-memory-1.0.4.xpi`）
 2. Zotero → **工具 → 插件**（或工具 → 附加组件）
-3. 把 `.xpi` 拖进插件窗口，重启 Zotero
+3. 把 `.xpi` **拖进**插件窗口，重启 Zotero
 4. 手动改一次标注颜色，再重启 — 颜色应被保留
 
-卸载：插件窗口中移除本插件，重启 Zotero。
+SHA256（`annotation-color-memory-1.0.4.xpi`）：
+
+```
+fc2d49112e1d1eda0db3e65313fb7b1a9661b6a106be5ff176efdbd4e09a7cce
+```
+
+卸载：插件窗口中移除本插件，重启 Zotero。也可到 [Releases](https://github.com/Saytanz0815/annotation-color-memory/releases) 查看更新说明。
 
 ## 偏好设置
 
@@ -108,3 +128,7 @@ Compress-Archive -Path src/* -DestinationPath dist/annotation-color-memory-1.0.4
 ## 许可证
 
 MIT，见 [LICENSE](LICENSE)。
+
+品牌标识（logo）仅用于项目展示，权属与使用范围见 [acm-brand](https://github.com/Saytanz0815/acm-brand)；不随插件分发。
+
+*Zotero 是 Corporation for Digital Scholarship 的商标。本项目为第三方插件，与 Zotero / Corporation for Digital Scholarship 无隶属或官方背书关系。*

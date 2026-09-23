@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/Saytanz0815/acm-brand@main/logo-dark.png">
-    <img src="https://cdn.jsdelivr.net/gh/Saytanz0815/acm-brand@main/logo.png" width="120" alt="Annotation Color Memory">
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/logo-dark.png">
+    <img src=".github/assets/logo.png" width="120" alt="Annotation Color Memory">
   </picture>
 </p>
 
@@ -125,10 +125,10 @@ Compress-Archive -Path src/* -DestinationPath dist/annotation-color-memory-1.0.4
 - 不读取、不上传文献库和 PDF 内容
 - 偏好键只使用 `extensions.zotero.annotColorMem.*` 命名空间
 
-## 许可证
+## 许可证与免责声明
 
-MIT，见 [LICENSE](LICENSE)。
+- **软件**：MIT License，见 [LICENSE](LICENSE)（`src/`、`dist/` 及 `.xpi` 内的插件代码）。
+- **品牌资产**：`.github/assets/` 下的 logo（浅色/深色）为本项目原创图形（含 AI 辅助草稿与人工精修），**不随插件安装包分发**，也**不适用** MIT 条款。仅可用于指代或说明本项目及其文档；不得用于暗示官方背书，不得注册近似商标，不得用于冒充或虚假关联。详见 [LICENSE](LICENSE) 中 “Brand assets” 一节。
+- **第三方商标**：*Zotero* 是 Corporation for Digital Scholarship 的商标。本项目为第三方插件，仅表示与 Zotero 兼容，与 Zotero / Corporation for Digital Scholarship 无隶属、赞助或官方背书关系。
 
-品牌标识（logo）仅用于项目展示，权属与使用范围见 [acm-brand](https://github.com/Saytanz0815/acm-brand)；不随插件分发。
-
-*Zotero 是 Corporation for Digital Scholarship 的商标。本项目为第三方插件，与 Zotero / Corporation for Digital Scholarship 无隶属或官方背书关系。*
+**You are granted no rights in the name "Zotero" or any Zotero marks.** 使用 *Zotero* 名称或徽标仅限指明兼容性，不得暗示本项目获得 Zotero 官方认可。

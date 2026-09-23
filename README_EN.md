@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/Saytanz0815/acm-brand@main/logo-dark.png">
-    <img src="https://cdn.jsdelivr.net/gh/Saytanz0815/acm-brand@main/logo.png" width="120" alt="Annotation Color Memory">
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/logo-dark.png">
+    <img src=".github/assets/logo.png" width="120" alt="Annotation Color Memory">
   </picture>
 </p>
 
@@ -125,10 +125,10 @@ Load temporarily while developing: Tools → Plugins → gear → “Install Plu
 - Does not read or upload library/PDF content
 - Preference keys use the `extensions.zotero.annotColorMem.*` namespace only
 
-## License
+## License & disclaimers
 
-MIT — see [LICENSE](LICENSE).
+- **Software**: MIT License — see [LICENSE](LICENSE) for the plugin code (`src/`, `dist/`, and the `.xpi`).
+- **Brand assets**: The logos under `.github/assets/` (light/dark) are original graphics for this project (AI-assisted draft, then manually refined). They are **not** shipped in the plugin package and are **not** under the MIT License. Use is limited to identifying or illustrating this project and its docs. Do **not** imply endorsement, register confusingly similar marks, or use them for impersonation or false association. Full terms: see “Brand assets” in [LICENSE](LICENSE).
+- **Third-party marks**: *Zotero* is a trademark of Corporation for Digital Scholarship. This is a third-party plugin. References to Zotero indicate compatibility only; there is no affiliation, sponsorship, or endorsement by Zotero / Corporation for Digital Scholarship.
 
-Brand marks (logo) are for project display only; ownership and scope: [acm-brand](https://github.com/Saytanz0815/acm-brand). They are not shipped with the plugin.
-
-*Zotero is a trademark of Corporation for Digital Scholarship. This is a third-party plugin and is not affiliated with or endorsed by Zotero / Corporation for Digital Scholarship.*
+**You are granted no rights in the name "Zotero" or any Zotero marks.** Use of the name or logos is solely for nominative compatibility reference and must not imply official approval.

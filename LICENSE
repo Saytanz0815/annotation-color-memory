@@ -19,3 +19,35 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+## Brand assets (not part of the MIT-licensed software)
+
+The logo and related images under `.github/assets/` ("Brand Assets") are
+copyright (c) 2026 Annotation Color Memory contributors. They are **not**
+distributed in the plugin package (`src/`, `dist/`, or the `.xpi`) and are
+**not** covered by the MIT License above.
+
+Permission to use the Brand Assets is limited to identifying or illustrating
+the *Annotation Color Memory* project and its documentation (including this
+repository’s README and release pages). You may not:
+
+- use the Brand Assets in a way that implies endorsement, partnership, or
+  affiliation with the project, with Zotero, or with Corporation for Digital
+  Scholarship;
+- register the Brand Assets, or confusingly similar marks, as trademarks;
+- use the Brand Assets for impersonation, fraud, or false association with
+  any product or service that is not this project.
+
+The Brand Assets are original graphics created for this project (AI-assisted
+draft, then manually refined). THE BRAND ASSETS ARE PROVIDED "AS IS", WITHOUT
+WARRANTY OF ANY KIND.
+
+## Third-party names and marks
+
+"Zotero" and any related names or marks are the property of their respective
+owners (including Corporation for Digital Scholarship). They appear in this
+project **only** to indicate compatibility with Zotero. This is a third-party
+plugin and is not affiliated with, sponsored by, or endorsed by Zotero or
+Corporation for Digital Scholarship.

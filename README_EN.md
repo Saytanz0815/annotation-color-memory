@@ -56,16 +56,14 @@ This plugin restores the last-used color **without locking the native color pick
 
 ## Install
 
-1. **[Download xpi](https://github.com/Saytanz0815/annotation-color-memory/releases/latest)** (`annotation-color-memory-1.0.4.xpi`)
+1. **[Download xpi](https://github.com/Saytanz0815/annotation-color-memory/releases/latest)** (`annotation-color-memory-1.0.7.xpi`)
 2. Zotero → **Tools → Plugins** (or Tools → Add-ons)
 3. Drag the `.xpi` onto the Plugins window, then restart Zotero
 4. Pick an annotation color once, restart again — the color should persist
 
-SHA256 (`annotation-color-memory-1.0.4.xpi`):
+> **Upgrading from 1.0.4 or earlier**: the plugin id is now `annotcolormem@local`. Remove the old version in the Plugins window before installing this one, otherwise both entries will coexist.
 
-```
-fc2d49112e1d1eda0db3e65313fb7b1a9661b6a106be5ff176efdbd4e09a7cce
-```
+SHA256 checksums are listed on each [release](https://github.com/Saytanz0815/annotation-color-memory/releases) page.
 
 Uninstall: remove the plugin in the Plugins window, then restart Zotero. See [Releases](https://github.com/Saytanz0815/annotation-color-memory/releases) for change notes.
 
@@ -92,8 +90,11 @@ Pick a color once, restart Zotero, and check again. If it still fails, confirm `
 **Can I pin one color and ignore later picks?**  
 Yes. Set `saveLast` to `false`, then write the `highlight` / `underline` / `note` / `image` keys yourself.
 
+**Why do my manual pref edits have no effect?**  
+Builds before 1.0.7 omitted the `global` flag, so values were written under `extensions.zotero.extensions.zotero.annotColorMem.*` (one extra prefix). On first start, 1.0.7 migrates those values back to the documented keys and removes the stray ones; manual edits work afterwards (restart Zotero).
+
 **Why not put colors in `user.js`?**  
-`user.js` overwrites saved colors on every start and fights this plugin’s “remember last” behavior. Use Config Editor only.
+`user.js` overwrites saved colors on every start and fights this plugin's "remember last" behavior. Use Config Editor only.
 
 ## Development
 
@@ -108,14 +109,10 @@ Build the `.xpi` (a zip of `src/`):
 
 ```bash
 cd src
-zip -r ../annotation-color-memory-1.0.4.xpi manifest.json bootstrap.js code.js
+zip -r ../annotation-color-memory-1.0.7.xpi manifest.json bootstrap.js code.js
 ```
 
-Windows (PowerShell):
-
-```powershell
-Compress-Archive -Path src/* -DestinationPath dist/annotation-color-memory-1.0.4.xpi
-```
+On Windows: `Compress-Archive -Path src/* -DestinationPath dist/annotation-color-memory-1.0.7.xpi`.
 
 Load temporarily while developing: Tools → Plugins → gear → “Install Plugin From File”.
 
@@ -128,7 +125,7 @@ Load temporarily while developing: Tools → Plugins → gear → “Install Plu
 ## License & disclaimers
 
 - **Software**: MIT License — see [LICENSE](LICENSE) for the plugin code (`src/`, `dist/`, and the `.xpi`).
-- **Brand assets**: The logos under `.github/assets/` (light/dark) are original graphics for this project (AI-assisted draft, then manually refined). They are **not** shipped in the plugin package and are **not** under the MIT License. Use is limited to identifying or illustrating this project and its docs. Do **not** imply endorsement, register confusingly similar marks, or use them for impersonation or false association. Full terms: see “Brand assets” in [LICENSE](LICENSE).
+- **Brand assets**: The logos under `.github/assets/` (light/dark) are original graphics for this project (AI-assisted draft, then manually refined). They are **not** under the MIT License. Use is limited to identifying or illustrating this project and its docs. Do **not** modify (recolor, reshape, or otherwise derive) them or reuse them for another project, imply endorsement, register confusingly similar marks, or use them for impersonation or false association. Full terms: see “Brand assets” in [LICENSE](LICENSE).
 - **Third-party marks**: *Zotero* is a trademark of Corporation for Digital Scholarship. This is a third-party plugin. References to Zotero indicate compatibility only; there is no affiliation, sponsorship, or endorsement by Zotero / Corporation for Digital Scholarship.
 
 **You are granted no rights in the name "Zotero" or any Zotero marks.** Use of the name or logos is solely for nominative compatibility reference and must not imply official approval.

@@ -56,16 +56,14 @@ Zotero 本身不会持久化标注工具的颜色：切换标签页或重启后�
 
 ## 安装
 
-1. **[下载 xpi](https://github.com/Saytanz0815/annotation-color-memory/releases/latest)**（`annotation-color-memory-1.0.4.xpi`）
+1. **[下载 xpi](https://github.com/Saytanz0815/annotation-color-memory/releases/latest)**（`annotation-color-memory-1.0.7.xpi`）
 2. Zotero → **工具 → 插件**（或工具 → 附加组件）
 3. 把 `.xpi` **拖进**插件窗口，重启 Zotero
 4. 手动改一次标注颜色，再重启 — 颜色应被保留
 
-SHA256（`annotation-color-memory-1.0.4.xpi`）：
+> **从 1.0.4 及更早版本升级**：插件 id 已统一为 `annotcolormem@local`，请先在插件窗口移除旧版再安装新版，否则会同时存在两个条目。
 
-```
-fc2d49112e1d1eda0db3e65313fb7b1a9661b6a106be5ff176efdbd4e09a7cce
-```
+校验值（SHA256）随每次发版标注在 [Releases](https://github.com/Saytanz0815/annotation-color-memory/releases) 页面。
 
 卸载：插件窗口中移除本插件，重启 Zotero。也可到 [Releases](https://github.com/Saytanz0815/annotation-color-memory/releases) 查看更新说明。
 
@@ -74,7 +72,7 @@ fc2d49112e1d1eda0db3e65313fb7b1a9661b6a106be5ff176efdbd4e09a7cce
 需要时打开配置编辑器（设置 → 高级 → 配置编辑器）：
 
 | 键 | 含义 |
-|-----|---------|
+|-----|------|
 | `extensions.zotero.annotColorMem.enabled` | 总开关（默认 `true`） |
 | `extensions.zotero.annotColorMem.saveLast` | 是否跟随上次使用的颜色（默认 `true`） |
 | `extensions.zotero.annotColorMem.highlight` | 上次使用的高亮颜色 |
@@ -92,6 +90,9 @@ fc2d49112e1d1eda0db3e65313fb7b1a9661b6a106be5ff176efdbd4e09a7cce
 **能不能固定一种颜色，不跟随我后来选的？**  
 可以。`saveLast` 设为 `false`，然后写死 `highlight` / `underline` / `note` / `image` 各键。
 
+**手改偏好键为什么不生效？**  
+1.0.7 之前的版本漏传了 `global` 参数，值被写进 `extensions.zotero.extensions.zotero.annotColorMem.*`（多一层前缀）。1.0.7 首次启动会把旧值迁回正确键并清掉多余键，之后手改即生效（改完重启 Zotero）。
+
 **为什么不把颜色写进 `user.js`？**  
 `user.js` 会在每次启动时覆盖已保存的颜色，和本插件的「记住上次」逻辑冲突。请只用配置编辑器改偏好。
 
@@ -108,14 +109,10 @@ src/
 
 ```bash
 cd src
-zip -r ../annotation-color-memory-1.0.4.xpi manifest.json bootstrap.js code.js
+zip -r ../annotation-color-memory-1.0.7.xpi manifest.json bootstrap.js code.js
 ```
 
-Windows（PowerShell）：
-
-```powershell
-Compress-Archive -Path src/* -DestinationPath dist/annotation-color-memory-1.0.4.xpi
-```
+Windows 也可用 `Compress-Archive -Path src/* -DestinationPath dist/annotation-color-memory-1.0.7.xpi`。
 
 开发时临时加载：工具 → 插件 → 齿轮 →「从文件安装插件」。
 
@@ -128,7 +125,7 @@ Compress-Archive -Path src/* -DestinationPath dist/annotation-color-memory-1.0.4
 ## 许可证与免责声明
 
 - **软件**：MIT License，见 [LICENSE](LICENSE)（`src/`、`dist/` 及 `.xpi` 内的插件代码）。
-- **品牌资产**：`.github/assets/` 下的 logo（浅色/深色）为本项目原创图形（含 AI 辅助草稿与人工精修），**不随插件安装包分发**，也**不适用** MIT 条款。仅可用于指代或说明本项目及其文档；不得用于暗示官方背书，不得注册近似商标，不得用于冒充或虚假关联。详见 [LICENSE](LICENSE) 中 “Brand assets” 一节。
+- **品牌资产**：`.github/assets/` 下的 logo（浅色/深色）为本项目原创图形（含 AI 辅助草稿与人工精修），**不适用** MIT 条款。仅可用于指代或说明本项目及其文档；**不得修改**（改色、改形、二次创作）后使用，**不得移作他用**；不得用于暗示官方背书，不得注册近似商标，不得用于虚假关联。详见 `LICENSE` 中 “Brand assets” 一节。
 - **第三方商标**：*Zotero* 是 Corporation for Digital Scholarship 的商标。本项目为第三方插件，仅表示与 Zotero 兼容，与 Zotero / Corporation for Digital Scholarship 无隶属、赞助或官方背书关系。
 
 **You are granted no rights in the name "Zotero" or any Zotero marks.** 使用 *Zotero* 名称或徽标仅限指明兼容性，不得暗示本项目获得 Zotero 官方认可。

@@ -5,127 +5,84 @@
   </picture>
 </p>
 
-# Annotation Color Memory
-
 <p align="center">
   <b>Zotero annotation colors that survive restarts</b><br>
   Highlight · Underline · Note · Image — each keeps its last color
 </p>
 
 <p align="center">
-  <sub>Pick a highlight color, restart Zotero, and it's gone? This plugin remembers it for you.</sub>
-</p>
-
-<p align="center">
-  <b>English</b> · <a href="README.md">中文</a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/Saytanz0815/annotation-color-memory/releases/latest"><img src="https://img.shields.io/github/v/release/Saytanz0815/annotation-color-memory?style=flat-square&label=release&cachebust=20260922" alt="release"></a>
+  <a href="https://github.com/Saytanz0815/annotation-color-memory/releases/latest"><img src="https://img.shields.io/github/v/release/Saytanz0815/annotation-color-memory?style=flat-square&label=release" alt="release"></a>
   <img src="https://img.shields.io/badge/Zotero-7%2B-CC2936?style=flat-square&logo=zotero&logoColor=white" alt="Zotero 7+">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="license"></a>
-  <a href="https://github.com/Saytanz0815/annotation-color-memory/stargazers"><img src="https://img.shields.io/github/stars/Saytanz0815/annotation-color-memory?style=flat-square&label=stars&cachebust=20260922" alt="stars"></a>
-  <a href="https://github.com/Saytanz0815/annotation-color-memory/releases"><img src="https://img.shields.io/github/downloads/Saytanz0815/annotation-color-memory/total?style=flat-square&label=downloads&cachebust=20260922" alt="downloads"></a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/Saytanz0815/annotation-color-memory/releases/latest"><b>Download xpi</b></a>
-  ·
-  <a href="#install">Install</a>
+  <a href="README.md">中文</a>
 </p>
 
 ---
 
 ## Why
 
-Zotero does not persist annotation tool colors across tabs or restarts (upstream has long left this unaddressed).
+Zotero does not persist annotation tool colors: switch tabs or restart, and the highlighter is back to the default yellow.
 
-This plugin restores the last-used color **without locking the native color pickers**. No network, no telemetry — only Zotero preferences.
-
-## Features
-
-- **Per-tool memory** — highlight / underline / note / image can use different colors
-- **Restore on PDF open** — the reader starts with your last palette
-- **Instant updates** — toolbar and selection popup both count
-- **Native UI untouched** — never blocks or rewrites the color picker
-- **Local only** — no network; data stays in Zotero preferences
-
-## Requirements
-
-- Zotero 7 or newer (tested up to the Zotero 10.x plugin API range)
+This plugin stores the last color used per tool in Zotero preferences and restores it the next time you open a PDF. Native pickers are never locked, and there are no network requests.
 
 ## Install
 
-1. **[Download xpi](https://github.com/Saytanz0815/annotation-color-memory/releases/latest)** (`annotation-color-memory-1.0.7.xpi`)
-2. Zotero → **Tools → Plugins** (or Tools → Add-ons)
-3. Drag the `.xpi` onto the Plugins window, then restart Zotero
-4. Pick an annotation color once, restart again — the color should persist
+1. Download the latest `.xpi` from [Releases](https://github.com/Saytanz0815/annotation-color-memory/releases/latest)
+2. In Zotero, open Tools → Plugins and drag the `.xpi` into the window
+3. Restart Zotero, pick an annotation color, restart again to confirm it persists
 
-> **Upgrading from 1.0.4 or earlier**: the plugin id is now `annotcolormem@local`. Remove the old version in the Plugins window before installing this one, otherwise both entries will coexist.
+Upgrading from 1.0.4 or earlier: remove the old version in the Plugins window first — the plugin id changed, otherwise both entries will coexist.
 
-SHA256 checksums are listed on each [release](https://github.com/Saytanz0815/annotation-color-memory/releases) page.
+## Features
 
-Uninstall: remove the plugin in the Plugins window, then restart Zotero. See [Releases](https://github.com/Saytanz0815/annotation-color-memory/releases) for change notes.
+- Per-tool memory: highlight / underline / note / image can each keep a different color
+- The last color is restored when a PDF opens
+- Picks take effect immediately, from the toolbar or the selection popup
+- Zotero's native UI is never blocked or rewritten
 
 ## Preferences
 
-Open Config Editor (Settings → Advanced → Config Editor) if needed:
-
 | Key | Meaning |
 |-----|---------|
-| `extensions.zotero.annotColorMem.enabled` | Master switch (default `true`) |
-| `extensions.zotero.annotColorMem.saveLast` | Follow last-used colors (default `true`) |
-| `extensions.zotero.annotColorMem.highlight` | Last highlight color |
-| `extensions.zotero.annotColorMem.underline` | Last underline color |
-| `extensions.zotero.annotColorMem.note` | Last note-annotation color |
-| `extensions.zotero.annotColorMem.image` | Last image-annotation color |
+| `extensions.zotero.annotColorMem.enabled` | Master switch, default `true` |
+| `extensions.zotero.annotColorMem.saveLast` | Follow the last-used color, default `true` |
+| `extensions.zotero.annotColorMem.highlight` | Highlight color |
+| `extensions.zotero.annotColorMem.underline` | Underline color |
+| `extensions.zotero.annotColorMem.note` | Note-annotation color |
+| `extensions.zotero.annotColorMem.image` | Image-annotation color |
 
-To freeze colors instead of following the last pick: set `saveLast` to `false`, then set each color key yourself.
+To pin colors instead of following later picks: set `saveLast` to `false`, then write the color keys yourself.
 
 ## FAQ
 
-**Colors still reset after install?**  
-Pick a color once, restart Zotero, and check again. If it still fails, confirm `extensions.zotero.annotColorMem.enabled` is `true` and Zotero ≥ 7.
+**Colors still reset after a restart?** Check that `enabled` and `saveLast` are `true`, pick a color once, then quit Zotero completely and reopen it.
 
-**Can I pin one color and ignore later picks?**  
-Yes. Set `saveLast` to `false`, then write the `highlight` / `underline` / `note` / `image` keys yourself.
-
-**Why do my manual pref edits have no effect?**  
-Builds before 1.0.7 omitted the `global` flag, so values were written under `extensions.zotero.extensions.zotero.annotColorMem.*` (one extra prefix). On first start, 1.0.7 migrates those values back to the documented keys and removes the stray ones; manual edits work afterwards (restart Zotero).
-
-**Why not put colors in `user.js`?**  
-`user.js` overwrites saved colors on every start and fights this plugin's "remember last" behavior. Use Config Editor only.
+**Why not put colors in `user.js`?** `user.js` overwrites preferences on every start, which fights this plugin's "remember last" behavior. Use the Config Editor.
 
 ## Development
 
 ```
 src/
-  manifest.json    # Zotero extension manifest
+  manifest.json    # manifest
   bootstrap.js     # startup / shutdown
   code.js          # logic
 ```
 
-Build the `.xpi` (a zip of `src/`):
+Build (a zip of `src/` is the `.xpi`):
 
 ```bash
-cd src
-zip -r ../annotation-color-memory-1.0.7.xpi manifest.json bootstrap.js code.js
+cd src && zip -r ../annotation-color-memory.xpi manifest.json bootstrap.js code.js
 ```
-
-On Windows: `Compress-Archive -Path src/* -DestinationPath dist/annotation-color-memory-1.0.7.xpi`.
 
 Load temporarily while developing: Tools → Plugins → gear → “Install Plugin From File”.
 
 ## Privacy
 
-- No telemetry, no remote requests, no file writes outside Zotero preferences
-- Does not read or upload library/PDF content
-- Preference keys use the `extensions.zotero.annotColorMem.*` namespace only
+- No telemetry, no network requests; writes only `extensions.zotero.annotColorMem.*`
+- Does not read or upload library or PDF content
 
-## License & disclaimers
+## License
 
-- **Software**: MIT License — see [LICENSE](LICENSE) for the plugin code (`src/`, `dist/`, and the `.xpi`).
-- **Brand assets**: The logos under `.github/assets/` (light/dark) are original graphics for this project (AI-assisted draft, then manually refined). They are **not** under the MIT License. Use is limited to identifying or illustrating this project and its docs. Do **not** modify (recolor, reshape, or otherwise derive) them or reuse them for another project, imply endorsement, register confusingly similar marks, or use them for impersonation or false association. Full terms: see “Brand assets” in [LICENSE](LICENSE).
-- **Third-party marks**: *Zotero* is a trademark of Corporation for Digital Scholarship. This is a third-party plugin. References to Zotero indicate compatibility only; there is no affiliation, sponsorship, or endorsement by Zotero / Corporation for Digital Scholarship.
-
-**You are granted no rights in the name "Zotero" or any Zotero marks.** Use of the name or logos is solely for nominative compatibility reference and must not imply official approval.
+- Software: [MIT](LICENSE)
+- Brand assets: the logos under `.github/assets/` are not MIT-licensed. Use is limited to identifying this project; do not modify or repurpose them. See “Brand assets” in [LICENSE](LICENSE)
+- *Zotero* is a trademark of Corporation for Digital Scholarship. This is a third-party plugin, named only to indicate compatibility

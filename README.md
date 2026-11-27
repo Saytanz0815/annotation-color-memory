@@ -5,127 +5,84 @@
   </picture>
 </p>
 
-# Annotation Color Memory
-
 <p align="center">
   <b>重启也不丢的 Zotero 标注颜色</b><br>
   高亮 · 下划线 · 笔记 · 图片，各自记住上次用的颜色
 </p>
 
 <p align="center">
-  <sub>读文献改完标注颜色，重开 Zotero 又丢了？这个插件替你记住。</sub>
-</p>
-
-<p align="center">
-  <a href="README_EN.md">English</a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/Saytanz0815/annotation-color-memory/releases/latest"><img src="https://img.shields.io/github/v/release/Saytanz0815/annotation-color-memory?style=flat-square&label=release&cachebust=20260922" alt="release"></a>
+  <a href="https://github.com/Saytanz0815/annotation-color-memory/releases/latest"><img src="https://img.shields.io/github/v/release/Saytanz0815/annotation-color-memory?style=flat-square&label=release" alt="release"></a>
   <img src="https://img.shields.io/badge/Zotero-7%2B-CC2936?style=flat-square&logo=zotero&logoColor=white" alt="Zotero 7+">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="license"></a>
-  <a href="https://github.com/Saytanz0815/annotation-color-memory/stargazers"><img src="https://img.shields.io/github/stars/Saytanz0815/annotation-color-memory?style=flat-square&label=stars&cachebust=20260922" alt="stars"></a>
-  <a href="https://github.com/Saytanz0815/annotation-color-memory/releases"><img src="https://img.shields.io/github/downloads/Saytanz0815/annotation-color-memory/total?style=flat-square&label=downloads&cachebust=20260922" alt="downloads"></a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/Saytanz0815/annotation-color-memory/releases/latest"><b>下载 xpi</b></a>
-  ·
-  <a href="#安装">安装说明</a>
+  <a href="README_EN.md">English</a>
 </p>
 
 ---
 
-## Why
+## 为什么
 
-Zotero 本身不会持久化标注工具的颜色：切换标签页或重启后就会丢失（上游长期未处理该行为）。
+Zotero 不保留标注工具的颜色：切标签页、重启之后，高亮又回到默认的黄色。
 
-本插件在**不锁定原生取色器**的前提下，把上次使用的颜色恢复回来。无网络、无遥测，只写 Zotero 偏好。
-
-## 功能特性
-
-- **按工具分别记忆** — 高亮、下划线、笔记、图片可以用不同颜色
-- **打开 PDF 时自动恢复** — 阅读器一开就是上次那套颜色
-- **改色即时生效** — 工具栏和选中文字后的弹窗都算
-- **不打扰原生界面** — 不阻断、不改写颜色选择 UI
-- **本机存储** — 无网络访问，数据只在 Zotero 偏好里
-
-## 环境要求
-
-- Zotero 7 或更高（已测试到 Zotero 10.x 插件 API 范围）
+本插件把每个工具上次用的颜色存进 Zotero 偏好，下次打开 PDF 时恢复。不锁定原生取色器，无网络请求。
 
 ## 安装
 
-1. **[下载 xpi](https://github.com/Saytanz0815/annotation-color-memory/releases/latest)**（`annotation-color-memory-1.0.7.xpi`）
-2. Zotero → **工具 → 插件**（或工具 → 附加组件）
-3. 把 `.xpi` **拖进**插件窗口，重启 Zotero
-4. 手动改一次标注颜色，再重启 — 颜色应被保留
+1. 从 [Releases](https://github.com/Saytanz0815/annotation-color-memory/releases/latest) 下载最新 `.xpi`
+2. Zotero → 工具 → 插件，把 `.xpi` 拖进窗口
+3. 重启 Zotero，改一次标注颜色，再重启确认颜色被保留
 
-> **从 1.0.4 及更早版本升级**：插件 id 已统一为 `annotcolormem@local`，请先在插件窗口移除旧版再安装新版，否则会同时存在两个条目。
+从 1.0.4 及更早版本升级：先在插件窗口移除旧版再安装——插件 id 已变更，否则会并存两个条目。
 
-校验值（SHA256）随每次发版标注在 [Releases](https://github.com/Saytanz0815/annotation-color-memory/releases) 页面。
+## 功能
 
-卸载：插件窗口中移除本插件，重启 Zotero。也可到 [Releases](https://github.com/Saytanz0815/annotation-color-memory/releases) 查看更新说明。
+- 按工具分别记忆：高亮 / 下划线 / 笔记 / 图片可以各自不同色
+- 打开 PDF 时自动恢复上次的颜色
+- 改色即时生效，工具栏与选中文字后的弹窗都算
+- 不阻断、不改写 Zotero 原生界面
 
-## 偏好设置
-
-需要时打开配置编辑器（设置 → 高级 → 配置编辑器）：
+## 偏好键
 
 | 键 | 含义 |
 |-----|------|
-| `extensions.zotero.annotColorMem.enabled` | 总开关（默认 `true`） |
-| `extensions.zotero.annotColorMem.saveLast` | 是否跟随上次使用的颜色（默认 `true`） |
-| `extensions.zotero.annotColorMem.highlight` | 上次使用的高亮颜色 |
-| `extensions.zotero.annotColorMem.underline` | 上次使用的下划线颜色 |
-| `extensions.zotero.annotColorMem.note` | 上次使用的笔记标注颜色 |
-| `extensions.zotero.annotColorMem.image` | 上次使用的图片标注颜色 |
+| `extensions.zotero.annotColorMem.enabled` | 总开关，默认 `true` |
+| `extensions.zotero.annotColorMem.saveLast` | 跟随上次使用的颜色，默认 `true` |
+| `extensions.zotero.annotColorMem.highlight` | 高亮颜色 |
+| `extensions.zotero.annotColorMem.underline` | 下划线颜色 |
+| `extensions.zotero.annotColorMem.note` | 笔记标注颜色 |
+| `extensions.zotero.annotColorMem.image` | 图片标注颜色 |
 
-想冻结颜色、不再跟随上次选择：把 `saveLast` 设为 `false`，再自行设置各个颜色键。
+想固定颜色、不跟随后来的选择：把 `saveLast` 设为 `false`，再自行写入上述颜色键。
 
-## FAQ
+## 常见问题
 
-**装了之后颜色还是丢？**  
-先手动改一次颜色，再重启 Zotero 验证。若仍无效，确认 `extensions.zotero.annotColorMem.enabled` 为 `true`，且 Zotero ≥ 7。
+**重启后颜色还是丢？** 确认 `enabled` 与 `saveLast` 为 `true`，改一次颜色后完整退出 Zotero 再打开。
 
-**能不能固定一种颜色，不跟随我后来选的？**  
-可以。`saveLast` 设为 `false`，然后写死 `highlight` / `underline` / `note` / `image` 各键。
-
-**手改偏好键为什么不生效？**  
-1.0.7 之前的版本漏传了 `global` 参数，值被写进 `extensions.zotero.extensions.zotero.annotColorMem.*`（多一层前缀）。1.0.7 首次启动会把旧值迁回正确键并清掉多余键，之后手改即生效（改完重启 Zotero）。
-
-**为什么不把颜色写进 `user.js`？**  
-`user.js` 会在每次启动时覆盖已保存的颜色，和本插件的「记住上次」逻辑冲突。请只用配置编辑器改偏好。
+**为什么不把颜色写进 `user.js`？** `user.js` 每次启动都会覆盖偏好，与本插件的「记住上次」逻辑冲突。请用配置编辑器。
 
 ## 开发
 
 ```
 src/
-  manifest.json    # Zotero 扩展清单
+  manifest.json    # 清单
   bootstrap.js     # 启动 / 关闭
   code.js          # 逻辑
 ```
 
-打包 `.xpi`（把 `src/` 打成 zip）：
+打包（把 `src/` 打成 zip 即 `.xpi`）：
 
 ```bash
-cd src
-zip -r ../annotation-color-memory-1.0.7.xpi manifest.json bootstrap.js code.js
+cd src && zip -r ../annotation-color-memory.xpi manifest.json bootstrap.js code.js
 ```
-
-Windows 也可用 `Compress-Archive -Path src/* -DestinationPath dist/annotation-color-memory-1.0.7.xpi`。
 
 开发时临时加载：工具 → 插件 → 齿轮 →「从文件安装插件」。
 
 ## 隐私
 
-- 无遥测、无远程请求，不写 Zotero 偏好以外的文件
-- 不读取、不上传文献库和 PDF 内容
-- 偏好键只使用 `extensions.zotero.annotColorMem.*` 命名空间
+- 无遥测、无网络请求，只写 `extensions.zotero.annotColorMem.*`
+- 不读取、不上传文献库与 PDF 内容
 
-## 许可证与免责声明
+## 许可
 
-- **软件**：MIT License，见 [LICENSE](LICENSE)（`src/`、`dist/` 及 `.xpi` 内的插件代码）。
-- **品牌资产**：`.github/assets/` 下的 logo（浅色/深色）为本项目原创图形（含 AI 辅助草稿与人工精修），**不适用** MIT 条款。仅可用于指代或说明本项目及其文档；**不得修改**（改色、改形、二次创作）后使用，**不得移作他用**；不得用于暗示官方背书，不得注册近似商标，不得用于虚假关联。详见 `LICENSE` 中 “Brand assets” 一节。
-- **第三方商标**：*Zotero* 是 Corporation for Digital Scholarship 的商标。本项目为第三方插件，仅表示与 Zotero 兼容，与 Zotero / Corporation for Digital Scholarship 无隶属、赞助或官方背书关系。
-
-**You are granted no rights in the name "Zotero" or any Zotero marks.** 使用 *Zotero* 名称或徽标仅限指明兼容性，不得暗示本项目获得 Zotero 官方认可。
+- 软件：[MIT](LICENSE)
+- 品牌资产：`.github/assets/` 下的 logo 不适用 MIT，仅可用于指代本项目；不得修改、不得移作他用。详见 [LICENSE](LICENSE) 的 “Brand assets”
+- *Zotero* 是 Corporation for Digital Scholarship 的商标；本项目为第三方插件，仅表示兼容

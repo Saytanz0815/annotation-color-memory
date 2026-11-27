@@ -1,5 +1,5 @@
 /**
- * Annotation Color Memory 1.0.7
+ * Annotation Color Memory 1.0.8
  *
  * Symptom (1.0.3): restart always showed first-saved colors (e.g. underline
  * orange / highlight yellow) even after picking new colors.
@@ -52,14 +52,14 @@ Zotero.AnnotationColorMemory = {
     Zotero.Reader.registerEventListener(
       "renderToolbar",
       onToolbar,
-      "annotcolormem@local"
+      "annotation-color-memory@zotero-plugin"
     );
     this._handlers.push(["renderToolbar", onToolbar]);
 
     try {
       for (const r of Zotero.Reader._readers || []) this._onReader(r);
     } catch (e) {}
-    Zotero.debug("[ColorMem] 1.0.4 started");
+    Zotero.debug("[ColorMem] 1.0.8 started");
   },
 
   unregister() {

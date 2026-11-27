@@ -31,7 +31,7 @@ This plugin stores the last color used per tool in Zotero preferences and restor
 2. In Zotero, open Tools → Plugins and drag the `.xpi` into the window
 3. Restart Zotero, pick an annotation color, restart again to confirm it persists
 
-Upgrading from 1.0.4 or earlier: remove the old version in the Plugins window first — the plugin id changed, otherwise both entries will coexist.
+Upgrading from **1.0.5–1.0.7**: remove the old version in the Plugins window first — those builds used a temporary plugin id, otherwise both entries will coexist. 1.0.4 and earlier can be upgraded in place.
 
 ## Features
 
